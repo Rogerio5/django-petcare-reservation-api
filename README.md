@@ -141,20 +141,98 @@ python manage.py runserver
    ```bash
    pytest
 2. Rodar com cobertura
-
-```bash
-pytest --cov
-```
+   
+   ```bash
+   pytest --cov
+   ```
 3. Gerar relatório em HTML
 
-```bash
-coverage html
-```
+   ```bash
+   coverage html
+   ```
 4. Abrir no navegador
 
-Código
-htmlcov/index.html
+   Código
+   htmlcov/index.html
+   
+   ✅ Cobertura atual: 98%
 
-✅ Cobertura atual: 98%
+---
+
+## 🧪 Testes com Postman / Postman Tests
+
+**PT:**  
+Este projeto já inclui uma **coleção do Postman** (`postman_collection.json`) para facilitar os testes da API.  
+A coleção cobre **CRUD completo** para **Contatos, Reservas e Categorias**, além de um **endpoint especial** que retorna todas as reservas de uma categoria específica.  
+
+**EN:**  
+This project already includes a **Postman collection** (`postman_collection.json`) to make API testing easier.  
+The collection covers **full CRUD** for **Contacts, Reservations, and Categories**, plus a **special endpoint** that returns all reservations of a specific category.  
+
+---
+
+### ⚙️ Configuração do Ambiente / Environment Setup
+
+| Variável / Variable | Valor (exemplo) / Example Value | Descrição / Description |
+|---------------------|---------------------------------|--------------------------|
+| `auth_token`        | `seu_token_gerado_no_django` / `your_token_generated_in_django` | Token de autenticação (obtido via login ou admin) / Authentication token (obtained via login or admin) |
+| `url`               | `http://127.0.0.1:8000`         | Endereço base da API / Base URL of the API |
+
+**PT:**  
+1. Abra o **Postman** → **Environments** → **Add**.  
+2. Crie um ambiente chamado **Django API**.  
+3. Adicione as variáveis acima.  
+4. Clique em **Save** e selecione o ambiente no canto superior direito.  
+
+**EN:**  
+1. Open **Postman** → **Environments** → **Add**.  
+2. Create an environment named **Django API**.  
+3. Add the variables above.  
+4. Click **Save** and select the environment in the top right corner.  
+
+---
+
+### ▶️ Endpoints disponíveis / Available Endpoints
+
+- **Contatos / Contacts** → CRUD completo em `/api/contatos/`  
+- **Reservas / Reservations** → CRUD completo em `/api/reservas/`  
+- **Categorias / Categories** → CRUD completo em `/api/categorias/`  
+  - **GET `/api/categorias/<id>/reservas/`** → retorna todas as reservas (animais) de uma categoria específica / returns all reservations (animals) of a specific category  
+
+---
+
+### 🔎 Exemplos de uso / Usage Examples
+
+- **Listar Contatos / List Contacts** → `GET {{url}}/contato/api/contatos/`  
+- **Criar Contato / Create Contact** → `POST {{url}}/contato/api/contatos/`  
+- **Listar Reservas / List Reservations** → `GET {{url}}/contato/api/reservas/`  
+- **Criar Reserva / Create Reservation** → `POST {{url}}/contato/api/reservas/`  
+- **Listar Categorias / List Categories** → `GET {{url}}/contato/api/categorias/`  
+- **Reservas de uma Categoria / Reservations of a Category** → `GET {{url}}/contato/api/categorias/1/reservas/`  
+
+---
+
+### 🔑 Obtendo o Token / Getting the Token
+
+**PT:**  
+1. Crie um usuário no Django Admin ou via `createsuperuser`.  
+2. Gere o token de autenticação:  
+   ```bash
+   python manage.py drf_create_token <seu_usuario>
+   ou acesse pelo Django Admin → Tokens.
+
+3. Copie o token e cole no campo auth_token do ambiente no Postman.
+
+EN:
+
+1. Create a user in Django Admin or via `createsuperuser`.
+
+2. Generate the authentication token:
+
+```bash
+python manage.py drf_create_token <your_user>
+or access it through Django Admin → Tokens.
+```
+3. Copy the token and paste it into the auth_token field of the Postman environment.
 
 ---
