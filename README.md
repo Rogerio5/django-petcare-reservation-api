@@ -455,7 +455,7 @@ or access it through Django Admin → Tokens.
 
 ---
 
-## 📌 Evolução
+## 📌 Evolução / Evolution
 
 **PT:**  
 Este projeto é a **terceira etapa** da evolução iniciada com o [Django-Mini-Project---Contact-Page-Ultima](https://github.com/Rogerio5/Django-Mini-Project---Contact-Page-Ultima).  
@@ -470,6 +470,10 @@ Este projeto é a **terceira etapa** da evolução iniciada com o [Django-Mini-P
   - 🔑 **Autenticação via Token** para proteger endpoints  
   - 🧪 **Testes automatizados** com Pytest e Postman Collection  
   - ✅ **Cobertura de testes: 98%**  
+  - 📈 **Escalabilidade**: arquitetura preparada para múltiplos usuários e endpoints  
+  - 📖 **Documentação**: README bilíngue + coleção Postman para testes manuais  
+  - 🔄 **Integração Contínua**: estrutura pronta para pipelines de CI/CD  
+  - ⚖️ **Regras de Negócio**: limite de 4 reservas/dia validado em formulário e API  
 
 ---
 
@@ -486,6 +490,10 @@ This project is the **third stage** of the evolution that started with [Django-M
   - 🔑 **Token-based authentication** to secure endpoints  
   - 🧪 **Automated tests** with Pytest and Postman Collection  
   - ✅ **Test coverage: 98%**  
+  - 📈 **Scalability**: architecture ready for multiple users and endpoints  
+  - 📖 **Documentation**: bilingual README + Postman collection for manual testing  
+  - 🔄 **Continuous Integration**: structure ready for CI/CD pipelines  
+  - ⚖️ **Business Rules**: limit of 4 reservations/day validated in form and API  
 
 ---
 
@@ -493,26 +501,38 @@ This project is the **third stage** of the evolution that started with [Django-M
 
 ```text
 📌 Projeto 1 – Contact Page
-   • Página de contato simples
+   • PT: Página de contato simples
+   • EN: Simple contact page
    • Django + SQLite + Bootstrap
-   • Testes manuais
+   • PT: Testes manuais
+   • EN: Manual tests
 
-⬇️ Evolução
+⬇️ Evolução / Evolution
 
 📌 Projeto 2 – Contact + Reservas + API
-   • Sistema de reservas
-   • Categorias de animais
-   • API REST com Django REST Framework
-   • Testes via Postman
+   • PT: Sistema de reservas
+   • EN: Reservation system
+   • PT: Categorias de animais
+   • EN: Animal categories
+   • PT: API REST com Django REST Framework
+   • EN: REST API with Django REST Framework
+   • PT: Testes via Postman
+   • EN: Tests via Postman
 
-⬇️ Evolução
+⬇️ Evolução / Evolution
 
-📌 Projeto 3 – Sistema Completo
-   • Reservas + Categorias + Contatos
-   • API REST robusta (CRUD + filtros + busca + ordenação)
-   • Autenticação via Token
-   • Testes automatizados (Pytest + Coverage)
-   • ✅ Cobertura de 98%
+📌 Projeto 3 – Sistema Completo / Complete System
+   • PT: Reservas + Categorias + Contatos
+   • EN: Reservations + Categories + Contacts
+   • PT: API REST robusta (CRUD + filtros + busca + ordenação)
+   • EN: Robust REST API (CRUD + filters + search + ordering)
+   • PT: Autenticação via Token
+   • EN: Token-based authentication
+   • PT: Testes automatizados (Pytest + Coverage)
+   • EN: Automated tests (Pytest + Coverage)
+   • PT: ✅ Cobertura de 98%
+   • EN: ✅ 98% Test Coverage
+
 ```
 ## 🔄 Comparativo de Evolução / Evolution Comparison
 
@@ -523,7 +543,11 @@ This project is the **third stage** of the evolution that started with [Django-M
 | **Tecnologias / Technologies** | Django, SQLite, Bootstrap | Django, DRF, django-filter, Pytest, Coverage |
 | **Interação / Interaction** | HTML + Admin | HTML + Admin + API REST |
 | **Testes / Tests**       | Manuais <br> Manual | Postman + Pytest (98% cobertura) <br> Postman + Pytest (98% coverage) |
-| **Autenticação / Authentication** | Não havia <br> None | Token-based |
+| **Autenticação / Authentication** | Não havia <br> None | Baseada em Token <br> Token-based |
+| **Escalabilidade / Scalability** | Uso local, sem foco em crescimento <br> Local use, no growth focus | Estrutura preparada para múltiplos usuários e endpoints <br> Structure ready for multiple users and endpoints |
+| **Cobertura de Testes / Test Coverage** | Nenhuma métrica <br> No metrics | 98% com relatórios HTML <br> 98% with HTML reports |
+| **Documentação / Documentation** | Ausente ou mínima <br> Absent or minimal | README bilíngue + coleção Postman <br> Bilingual README + Postman collection |
+| **Regras de Negócio / Business Rules** | Não implementadas <br> Not implemented | Limite de 4 reservas/dia validado em formulário e API <br> Limit of 4 reservations/day validated in form and API |
 
 ---
 
@@ -542,7 +566,18 @@ This project is under the MIT license. For more details, see the `LICENSE` file.
 ---
 
 🏁 Conclusão / Conclusion
-PT: O projeto django-contact-reservation-api evoluiu de um exercício acadêmico para um mini sistema completo, com contatos, reservas, categorias, API REST, autenticação via Token e testes automatizados. Com 98% de cobertura de testes, o sistema é robusto, confiável e pronto para ser usado como portfólio profissional ou base para sistemas reais (clínicas veterinárias, pet shops, agendas online).
 
-EN: The django-contact-reservation-api evolved from an academic exercise into a complete mini system, with contacts, reservations, categories, REST API, token-based authentication, and automated tests. With 98% test coverage, the system is robust, reliable, and ready to be showcased as a professional portfolio project or used as a foundation for real-world systems (veterinary clinics, pet shops, online booking platforms).
+**PT:**  
+O projeto **django-contact-reservation-api** evoluiu de um exercício acadêmico para um mini sistema completo, com contatos, reservas, categorias, API REST, autenticação via Token e testes automatizados.  
+Com **98% de cobertura de testes**, o sistema é robusto, confiável e pronto para ser usado como portfólio profissional ou base para sistemas reais (clínicas veterinárias, pet shops, agendas online).  
+Além disso, conta com uma **arquitetura escalável**, **documentação bilíngue** e **coleção Postman**, o que facilita tanto a manutenção quanto a expansão.  
+A estrutura também está preparada para integração com **pipelines de CI/CD**, reforçando boas práticas de desenvolvimento.  
+Graças à sua flexibilidade, pode ser facilmente adaptado para outros contextos de agendamento, como clínicas médicas, salões de beleza ou coworkings.  
+
+**EN:**  
+The **django-contact-reservation-api** evolved from an academic exercise into a complete mini system, with contacts, reservations, categories, REST API, token-based authentication, and automated tests.  
+With **98% test coverage**, the system is robust, reliable, and ready to be showcased as a professional portfolio project or used as a foundation for real-world systems (veterinary clinics, pet shops, online booking platforms).  
+It also features a **scalable architecture**, **bilingual documentation**, and a **Postman collection**, making both maintenance and expansion easier.  
+The structure is prepared for integration with **CI/CD pipelines**, reinforcing best development practices.  
+Thanks to its flexibility, it can be easily adapted to other scheduling contexts, such as medical clinics, beauty salons, or coworking spaces.  
 
