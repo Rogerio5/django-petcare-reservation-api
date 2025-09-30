@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Serviços - PetCare{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <h1 class="text-center mb-4">🛠 Nossos Serviços</h1>
+  <p class="lead text-center mb-5">
+    Conheça os serviços que oferecemos para garantir o bem-estar do seu pet.
+  </p>
+
+  <div class="row">
+    {% for servico in servicos %}
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-primary">{{ servico.nome }}</h5>
+            <p class="card-text text-muted">{{ servico.descricao|truncatewords:25 }}</p>
+            <p><span class="badge bg-info text-dark">Categoria: {{ servico.get_categoria }}</span></p>
+
+            {% if servico.recursos.all %}
+              <p><strong>Recursos:</strong> {{ servico.get_recursos }}</p>
+            {% else %}
+              <p class="text-muted"><em>Sem recursos vinculados</em></p>
+            {% endif %}
+
+            <div class="mt-auto text-center">
+              <a href="{% url 'contato:reserva' %}" class="btn btn-success btn-sm">
+                <i class="bi bi-calendar-plus"></i> Reservar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <div class="col-12 text-center">
+        <p class="text-muted">Nenhum serviço cadastrado ainda.</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

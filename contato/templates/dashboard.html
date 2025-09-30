@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - PetCare{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <h1 class="text-center mb-4">📊 Dashboard Público</h1>
+  <p class="lead text-center mb-5">
+    Acompanhe as estatísticas de serviços, recursos, categorias e reservas em tempo real.
+  </p>
+
+  <!-- Cards Resumo -->
+  <div class="row text-center mb-4">
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h6>🛠 Serviços</h6>
+          <p class="display-6">{{ total_servicos }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h6>📦 Recursos</h6>
+          <p class="display-6">{{ total_recursos }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h6>📂 Categorias</h6>
+          <p class="display-6">{{ total_categorias }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h6>📅 Reservas</h6>
+          <p class="display-6">{{ total_reservas }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gráficos -->
+  <div class="row mb-4">
+    <div class="col-md-6 mb-3">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="text-center">🏆 Reservas por Serviço</h5>
+          <canvas id="chartServicos"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="text-center">📂 Reservas por Categoria</h5>
+          <canvas id="chartCategorias"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="text-center">📈 Reservas por Mês</h5>
+          <canvas id="chartMeses"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Gráfico de Serviços
+  new Chart(document.getElementById('chartServicos'), {
+    type: 'bar',
+    data: {
+      labels: {{ servicos_labels|safe }},
+      datasets: [{
+        label: 'Reservas',
+        data: {{ servicos_data|safe }},
+        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } } }
+  });
+
+  // Gráfico de Categorias
+  new Chart(document.getElementById('chartCategorias'), {
+    type: 'pie',
+    data: {
+      labels: {{ categorias_labels|safe }},
+      datasets: [{
+        data: {{ categorias_data|safe }},
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+          'rgba(255, 206, 86, 0.6)',
+          'rgba(75, 192, 192, 0.6)',
+          'rgba(153, 102, 255, 0.6)'
+        ],
+        borderColor: '#fff',
+        borderWidth: 1
+      }]
+    },
+    options: { responsive: true }
+  });
+
+  // Gráfico de Reservas por Mês
+  new Chart(document.getElementById('chartMeses'), {
+    type: 'line',
+    data: {
+      labels: {{ meses_labels|safe }},
+      datasets: [{
+        label: 'Reservas',
+        data: {{ meses_data|safe }},
+        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        fill: true,
+        tension: 0.3
+      }]
+    },
+    options: { responsive: true, scales: { y: { beginAtZero: true } } }
+  });
+</script>
+{% endblock %}

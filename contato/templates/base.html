@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}PetCare{% endblock %}</title>
+    {% load static %}
+
+    <!-- CSS customizado -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="{% url 'contato:home' %}">🐾 PetCare</a>
+    <!-- Botão hamburguer para mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPetcare" aria-controls="navbarPetcare" aria-expanded="false" aria-label="Alternar navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarPetcare">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'contato:home' %}">🏠 Home</a>
+        <a class="nav-link {% if request.resolver_match.url_name == 'contato' %}active{% endif %}" href="{% url 'contato:contato' %}">📩 Contato</a>
+        <a class="nav-link {% if request.resolver_match.url_name == 'reserva' %}active{% endif %}" href="{% url 'contato:reserva' %}">🐶 Reservas</a>
+        <a class="nav-link {% if request.resolver_match.url_name == 'lista_servicos' %}active{% endif %}" href="{% url 'contato:lista_servicos' %}">🛠 Serviços</a>
+        <a class="nav-link {% if request.resolver_match.url_name == 'lista_recursos' %}active{% endif %}" href="{% url 'contato:lista_recursos' %}">📦 Recursos</a>
+        <a class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}" href="{% url 'contato:dashboard' %}">📊 Dashboard</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Banner -->
+<header class="container my-4">
+  <div class="card shadow-sm banner-container">
+    <img src="{% static 'image/banner.jpg' %}" alt="Banner PetCare" class="img-fluid">
+    <div class="banner-text text-center p-3">
+      <h1 class="slogan">PETCARE IS OUR PASSION</h1>
+      <h2 class="bemvindo">🐾 Bem-vindo ao PetCare</h2>
+    </div>
+  </div>
+</header>
+
+<!-- Seção de informações rápidas -->
+<section class="container mb-4">
+  <div class="row text-center">
+    <div class="col-md-4">
+      <h5>📍 Endereço</h5>
+      <p><a href="https://goo.gl/maps/xxxx" target="_blank">Rua Exemplo, 123 - Bauru/SP</a></p>
+    </div>
+    <div class="col-md-4">
+      <h5>📞 Emergência</h5>
+      <p>(14) 98888-7777</p>
+    </div>
+    <div class="col-md-4">
+      <h5>⏰ Horário</h5>
+      <p>Seg-Sex: 8h às 18h<br>Sáb: 9h às 14h</p>
+    </div>
+  </div>
+</section>
+
+<!-- Conteúdo principal -->
+<main class="container flex-grow-1">
+    {% block content %}{% endblock %}
+</main>
+
+<!-- Depoimentos -->
+<section class="container my-5">
+  <h3 class="text-center mb-4">⭐ O que nossos clientes dizem</h3>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <div class="card p-3 shadow-sm h-100">
+        <p>"Excelente atendimento, meu cachorro adorou!"</p>
+        <small class="text-muted">- Maria S.</small>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3 shadow-sm h-100">
+        <p>"Equipe muito atenciosa e profissional."</p>
+        <small class="text-muted">- João P.</small>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3 shadow-sm h-100">
+        <p>"Ambiente limpo e seguro, recomendo!"</p>
+        <small class="text-muted">- Ana L.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mapa -->
+<section class="container mb-5">
+  <h3 class="text-center mb-3">📍 Onde estamos</h3>
+  <div class="card shadow-sm">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- Rodapé -->
+<footer class="bg-dark text-white text-center py-4 mt-auto">
+  <div class="container">
+    <p class="mb-1">📍 Rua Exemplo, 123 - Bauru/SP</p>
+    <p class="mb-1">📞 (14) 99999-9999 | ✉️ contato@petcare.com</p>
+    <p class="mb-1">
+      🌐 Siga-nos:
+      <a href="https://instagram.com/seu_instagram" target="_blank" class="text-white mx-2">Instagram</a> |
+      <a href="https://facebook.com/seu_facebook" target="_blank" class="text-white mx-2">Facebook</a> |
+      <a href="https://wa.me/5514999999999" target="_blank" class="text-white mx-2">WhatsApp</a>
+    </p>
+    <small>© {{ now|date:"Y" }} PetCare - Todos os direitos reservados</small>
+  </div>
+</footer>
+
+<!-- Botão WhatsApp flutuante -->
+<a href="https://wa.me/5514999999999" class="whatsapp-float" target="_blank">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JS customizado -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

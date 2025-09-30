@@ -1,0 +1,6 @@
+@echo off
+echo 🔄 Resetando banco de dados...
+python manage.py resetdb
+
+echo 🚀 Iniciando servidor Django...
+python manage.py runserver

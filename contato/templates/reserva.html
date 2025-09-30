@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Reservas{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <h2 class="mb-4 text-center">📅 Agendar Reserva</h2>
+
+  <form method="post" class="row g-3">
+      {% csrf_token %}
+
+      <div class="col-md-6">
+        <label for="id_nome_pet" class="form-label">Nome do Pet</label>
+        {{ form.nome_pet }}
+      </div>
+
+      <div class="col-md-6">
+        <label for="id_telefone" class="form-label">Telefone</label>
+        {{ form.telefone }}
+      </div>
+
+      <div class="col-md-6">
+        <label for="id_data" class="form-label">Data da Reserva</label>
+        {{ form.data }}
+      </div>
+
+      <div class="col-md-6">
+        <label for="id_categoria" class="form-label">Categoria</label>
+        {{ form.categoria }}
+      </div>
+
+      <div class="col-md-12">
+        <label for="id_servico" class="form-label">Serviço</label>
+        {{ form.servico }}
+        <small class="form-text text-muted">Escolha o serviço desejado.</small>
+      </div>
+
+      <div class="col-md-12">
+        <label for="id_observacoes" class="form-label">Observações</label>
+        {{ form.observacoes }}
+      </div>
+
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-success btn-lg">
+          <i class="bi bi-calendar-check"></i> Confirmar Reserva
+        </button>
+      </div>
+  </form>
+
+  {% for message in messages %}
+      <div class="alert alert-success mt-3">{{ message }}</div>
+  {% endfor %}
+
+  {% if form.errors %}
+      <div class="alert alert-danger mt-3">
+          {{ form.errors }}
+      </div>
+  {% endif %}
+</div>
+{% endblock %}

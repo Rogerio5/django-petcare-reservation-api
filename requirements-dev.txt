@@ -1,0 +1,12 @@
+# requirements-dev.txt
+
+# Test runner
+pytest
+pytest-django
+
+# Cobertura de testes
+pytest-cov
+coverage
+
+# Ferramentas úteis para debug
+django-debug-toolbar
