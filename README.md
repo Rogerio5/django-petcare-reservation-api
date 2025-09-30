@@ -221,6 +221,100 @@ This project was built using the following technologies and tools:
 
 ---
 
+## 🧪 Testes da API / API Tests
+
+### 📬 Contatos / Contacts
+
+- **GET `/api/contatos/`**  
+  - PT: lista todos os contatos  
+  - EN: lists all contacts  
+
+- **POST `/api/contatos/`**  
+  - PT: cria um novo contato  
+  - EN: creates a new contact  
+
+- **GET `/api/contatos/<id>/`**  
+  - PT: retorna os detalhes de um contato específico  
+  - EN: returns details of a specific contact  
+
+- **PUT `/api/contatos/<id>/`**  
+  - PT: atualiza um contato existente  
+  - EN: updates an existing contact  
+
+- **DELETE `/api/contatos/<id>/`**  
+  - PT: exclui um contato  
+  - EN: deletes a contact  
+
+---
+
+### 📅 Reservas / Reservations
+
+- **GET `/api/reservas/`**  
+  - PT: lista todas as reservas  
+  - EN: lists all reservations  
+
+- **POST `/api/reservas/`**  
+  - PT: cria uma nova reserva  
+  - EN: creates a new reservation  
+
+- **GET `/api/reservas/<id>/`**  
+  - PT: retorna os detalhes de uma reserva específica  
+  - EN: returns details of a specific reservation  
+
+- **PUT `/api/reservas/<id>/`**  
+  - PT: atualiza uma reserva existente  
+  - EN: updates an existing reservation  
+
+- **DELETE `/api/reservas/<id>/`**  
+  - PT: exclui uma reserva  
+  - EN: deletes a reservation  
+
+---
+
+### 🐾 Categorias / Categories
+
+- **GET `/api/categorias/`**  
+  - PT: lista todas as categorias  
+  - EN: lists all categories  
+
+- **POST `/api/categorias/`**  
+  - PT: cria uma nova categoria  
+  - EN: creates a new category  
+
+- **GET `/api/categorias/<id>/`**  
+  - PT: retorna os detalhes de uma categoria específica  
+  - EN: returns details of a specific category  
+
+- **PUT `/api/categorias/<id>/`**  
+  - PT: atualiza uma categoria existente  
+  - EN: updates an existing category  
+
+- **DELETE `/api/categorias/<id>/`**  
+  - PT: exclui uma categoria  
+  - EN: deletes a category  
+
+- **GET `/api/categorias/<id>/reservas/`**  
+  - PT: retorna todas as reservas (animais) de uma categoria específica  
+  - EN: returns all reservations (animals) of a specific category  
+
+---
+
+### 🔎 Filtros e Busca / Filters and Search
+
+- **`?data=2025-09-30`**  
+  - PT: filtra reservas por data  
+  - EN: filters reservations by date  
+
+- **`?search=Rex`**  
+  - PT: busca reservas pelo nome do pet  
+  - EN: searches reservations by pet name  
+
+- **`?ordering=-data`**  
+  - PT: ordena reservas por data decrescente  
+  - EN: orders reservations by date (descending)  
+
+---
+
 ## 🧪 Testes com Postman / Postman Tests
 
 **PT:**  
