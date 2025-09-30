@@ -229,6 +229,31 @@ This project was built using the following technologies and tools:
 </p>
 
 ---
+
+# 🧪 Testes e Documentação da API – Projeto Contato Django  
+# 🧪 Tests and API Documentation – Contato Django Project  
+
+Este projeto possui uma suíte de testes **automatizados** (com `pytest` + Django) e também uma documentação clara dos **endpoints da API** para facilitar testes manuais (via Postman ou navegador).  
+This project includes an **automated test suite** (with `pytest` + Django) and clear documentation of the **API endpoints** to facilitate manual testing (via Postman or browser).  
+
+---
+
+## 📂 Estrutura da Suíte de Testes / Test Suite Structure
+
+| Arquivo / File | Cobre / Covers |
+|----------------|----------------|
+| **`test_models.py`** | Testes de `__str__` e helpers de `Mensagem`, `Categoria`, `Reserva`, `Recurso`, `Servico`. <br> Tests for `__str__` and helpers of `Mensagem`, `Categoria`, `Reserva`, `Recurso`, `Servico`. |
+| **`test_forms.py`** | Validação de formulários (`MensagemForm`, `ReservaForm`). <br> Form validation (`MensagemForm`, `ReservaForm`). |
+| **`test_views.py`** | Views Django tradicionais: homepage, envio de mensagens e reservas via formulário. <br> Traditional Django views: homepage, sending messages and reservations via form. |
+| **`test_api_contatos_auth.py`** | Views Django para mensagens e reservas (formulários), válidos e inválidos. <br> Django views for messages and reservations (forms), valid and invalid. |
+| **`test_api_contatos.py`** | API REST de contatos (`/api/contatos/`): listagem e criação. <br> Contacts REST API (`/api/contatos/`): listing and creation. |
+| **`test_api_auth.py`** | Autenticação na API de reservas: 401 sem login, sucesso com login. <br> Reservation API authentication: 401 without login, success with login. |
+| **`test_api_reserva_regra.py`** | API de categorias (`/api/categorias/`): CRUD + endpoint `/categorias/<id>/reservas/`. <br> Categories API (`/api/categorias/`): CRUD + endpoint `/categorias/<id>/reservas/`. |
+| **`test_reserva_regra.py`** | Regra de negócio via formulário: máximo 4 reservas/dia. <br> Business rule via form: max 4 reservations/day. |
+| **`test_api_reservas.py`** | CRUD completo da API de reservas (`/api/reservas/`) + regra de negócio. <br> Full CRUD of reservations API (`/api/reservas/`) + business rule. |
+
+---
+
 ## 🧪 Testes
 
 🔹 **Testes Automatizados (Django + Pytest)**
