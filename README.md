@@ -3,7 +3,7 @@
 ## 🚀 Django Project  
 ### 📬 Contatos + 📅 Reservas + 🐾 Categorias + 🌐 API REST + 🧪 Testes Automatizados
 
-![Capa do Projeto](reserva.png)
+![Capa do Projeto](reserva2.png)
 
 ---
 
