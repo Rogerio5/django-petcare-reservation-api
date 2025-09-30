@@ -46,10 +46,12 @@
 ## 📖 Descrição / Description
 
 **PT:**  
-Este projeto é a evolução de um mini projeto Django. Agora, além da página de contato, foi adicionado um **sistema de reservas**, um módulo de **categorias de animais**, uma **API REST completa** com **Django REST Framework**, autenticação via Token e **testes automatizados** com Pytest e Coverage.  
+Este projeto é a evolução de um mini projeto Django. Agora, além da página de contato, foi adicionado um sistema de reservas, um módulo de categorias de animais, uma API REST completa com Django REST Framework, autenticação via Token e testes automatizados com Pytest e Coverage.  
+Conta ainda com **98% de cobertura de testes**, documentação bilíngue (README + Postman Collection) e uma arquitetura **escalável**, pronta para ser usada como portfólio profissional ou como base para sistemas reais (clínicas veterinárias, pet shops, agendas online, coworkings).  
 
 **EN:**  
-This project is the evolution of a Django mini project. In addition to the contact page, it now includes a **reservation system**, an **animal categories module**, a **full REST API** with **Django REST Framework**, token-based authentication, and **automated tests** with Pytest and Coverage.  
+This project is the evolution of a Django mini project. In addition to the contact page, it now includes a reservation system, an animal categories module, a full REST API with Django REST Framework, token-based authentication, and automated tests with Pytest and Coverage.  
+It also features **98% test coverage**, bilingual documentation (README + Postman Collection), and a **scalable architecture**, making it suitable both as a professional portfolio project and as a foundation for real-world systems (veterinary clinics, pet shops, online booking platforms, coworking spaces).  
 
 ---
 
