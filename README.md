@@ -28,6 +28,18 @@ This project is the evolution of a Django mini project. In addition to the conta
 
 ---
 
+## 📌 Status do Projeto / Project Status
+
+![Status](https://img.shields.io/badge/STATUS-Em%20Evolução-success?style=for-the-badge)
+
+**PT:**  
+Este projeto está **ativo e em evolução**. Novas funcionalidades podem ser adicionadas ao longo do tempo.  
+
+**EN:**  
+This project is **active and evolving**. New features may be added over time.  
+
+---
+
 ## ⚙️ Funcionalidades / Features
 
 | 🧩 Funcionalidade (PT)                          | 💡 Description (EN)                          |
