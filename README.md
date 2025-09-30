@@ -151,6 +151,50 @@ python manage.py runserver
 
 ---
 
+## 🌐 Acesso / Access
+
+- [🔗 Repositório GitHub / GitHub Repository](https://github.com/Rogerio5/django-petcare-reservation-api)
+
+---
+
+## 🧰 Tecnologias / Technologies
+
+**PT:**  
+Este projeto foi desenvolvido utilizando as seguintes tecnologias e ferramentas:  
+
+**EN:**  
+This project was built using the following technologies and tools:  
+
+<p align="left">
+  <!-- Linguagem -->
+  <img alt="Python" title="Python" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/>
+  
+  <!-- Framework principal -->
+  <img alt="Django" title="Django" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"/>
+  
+  <!-- Banco de dados -->
+  <img alt="SQLite" title="SQLite" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"/>
+  
+  <!-- Frontend -->
+  <img alt="Bootstrap" title="Bootstrap" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"/>
+  <img alt="HTML5" title="HTML5" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+  <img alt="CSS3" title="CSS3" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"/>
+  <img alt="JavaScript" title="JavaScript" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/>
+  
+  <!-- API -->
+  <img alt="Django REST Framework" title="Django REST Framework" width="50px" src="https://www.django-rest-framework.org/img/logo.png"/>
+  
+  <!-- Testes -->
+  <img alt="Pytest" title="Pytest" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytest/pytest-original.svg"/>
+  <img alt="Coverage" title="Coverage.py" width="50px" src="https://img.shields.io/badge/Coverage.py-100%25-brightgreen"/>
+  <img alt="Postman" title="Postman" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"/>
+  
+  <!-- Versionamento -->
+  <img alt="Git" title="Git" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/>
+  <img alt="GitHub" title="GitHub" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"/>
+</p>
+
+---
 ## 🧪 Testes
 
 🔹 **Testes Automatizados (Django + Pytest)**
@@ -326,4 +370,23 @@ This project is the **third stage** of the evolution that started with [Django-M
 | **Autenticação / Authentication** | Não havia <br> None | Token-based |
 
 ---
+
+## 👨‍💻 Desenvolvedor / Developer
+
+- [Rogerio](https://github.com/Rogerio5)
+
+---
+
+## 📜 Licença / License
+
+Este projeto está sob licença MIT. Para mais detalhes, veja o arquivo `LICENSE`.  
+
+This project is under the MIT license. For more details, see the `LICENSE` file.
+
+---
+
+🏁 Conclusão / Conclusion
+PT: O projeto django-contact-reservation-api evoluiu de um exercício acadêmico para um mini sistema completo, com contatos, reservas, categorias, API REST, autenticação via Token e testes automatizados. Com 98% de cobertura de testes, o sistema é robusto, confiável e pronto para ser usado como portfólio profissional ou base para sistemas reais (clínicas veterinárias, pet shops, agendas online).
+
+EN: The django-contact-reservation-api evolved from an academic exercise into a complete mini system, with contacts, reservations, categories, REST API, token-based authentication, and automated tests. With 98% test coverage, the system is robust, reliable, and ready to be showcased as a professional portfolio project or used as a foundation for real-world systems (veterinary clinics, pet shops, online booking platforms).
 
