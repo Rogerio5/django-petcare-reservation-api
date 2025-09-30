@@ -1,6 +1,4 @@
-# django-petcare-reservation-api
-
-# 🐾 Django Contact + Reservation API
+# 🐾 django-petcare-reservation-api
 
 ## 🚀 Django Project  
 ### 📬 Contatos + 📅 Reservas + 🐾 Categorias + 🌐 API REST + 🧪 Testes Automatizados
