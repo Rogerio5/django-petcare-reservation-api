@@ -27,6 +27,7 @@
 - [🌐 Acesso / Access](#-acesso--access)
 - [🧰 Tecnologias / Technologies](#-tecnologias--technologies)
 - [🧪 Testes](#-testes)
+  - [🧪 Tests and API Documentation – Contato Django Project](#-testes-e-documentação-da-api--projeto-contato-django)  
   - [🧪 Testes da API / API Tests](#-testes-da-api--api-tests)
   - [🧪 Testes com Postman / Postman Tests](#-testes-com-postman--postman-tests)
 - [⚙️ Configuração do Ambiente / Environment Setup](#️-configuração-do-ambiente--environment-setup)
