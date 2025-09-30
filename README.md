@@ -63,19 +63,27 @@ This project is the evolution of a Django mini project. In addition to the conta
    pip install -r requirements.txt
    pip install -r requirements-dev.txt   # dependências de desenvolvimento
    ```
-3. Execute as migrações
+3. Reinicie o banco de dados
+   ```bash
+   python resetdb.py
+   ```
+4. Popule o banco com dados iniciais (seed)
+   ```bash
+   python seed.py
+   ```
+5. Execute as migrações (se necessário)
    ```bash
    python manage.py migrate
    ```
-4. Crie um superusuário
+6. Crie um superusuário
    ```bash
    python manage.py createsuperuser
    ```
-5. Rode o servidor
+7. Rode o servidor
    ```bash
    python manage.py runserver
    ```
-6. Acesse no navegador
+8. Acesse no navegador
 
     Contato: http://127.0.0.1:8000/contato/
     
@@ -104,22 +112,32 @@ source venv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
 pip install -r requirements-dev.txt   # development dependencies
 ```
-3. Run migrations
+3. Reset the database
+
+```bash
+python resetdb.py
+```
+4. Seed the database with initial data
+
+```bash
+python seed.py
+```
+5. Run migrations
 
 ```bash
 python manage.py migrate
 ```
-4. Create a superuser
+6. Create a superuser
 
 ```bash
 python manage.py createsuperuser
 ```
-5. Start the server
+7. Start the server
 
 ```bash
 python manage.py runserver
 ```
-6. Access in browser
+8. Access in browser
 
   Contact: http://127.0.0.1:8000/contato/
   
@@ -236,3 +254,76 @@ or access it through Django Admin → Tokens.
 3. Copy the token and paste it into the auth_token field of the Postman environment.
 
 ---
+
+## 📌 Evolução
+
+**PT:**  
+Este projeto é a **terceira etapa** da evolução iniciada com o [Django-Mini-Project---Contact-Page-Ultima](https://github.com/Rogerio5/Django-Mini-Project---Contact-Page-Ultima).  
+
+- **Projeto inicial:** apenas uma página de contato simples.  
+- **Segunda etapa:** ampliação para incluir reservas, categorias de animais e uma API REST com Django REST Framework.  
+- **Projeto atual (terceira parte):** sistema completo com:
+  - 📅 **Sistema de reservas**  
+  - 🐾 **Módulo de categorias de animais**, relacionado diretamente às reservas  
+  - 🌐 **API REST completa** com Django REST Framework  
+  - 🔍 **Filtros, busca e ordenação**  
+  - 🔑 **Autenticação via Token** para proteger endpoints  
+  - 🧪 **Testes automatizados** com Pytest e Postman Collection  
+  - ✅ **Cobertura de testes: 98%**  
+
+---
+
+**EN:**  
+This project is the **third stage** of the evolution that started with [Django-Mini-Project---Contact-Page-Ultima](https://github.com/Rogerio5/Django-Mini-Project---Contact-Page-Ultima).  
+
+- **Initial project:** only a simple contact page.  
+- **Second stage:** expanded to include reservations, animal categories, and a REST API with Django REST Framework.  
+- **Current project (third part):** a complete system with:
+  - 📅 **Reservation system**  
+  - 🐾 **Animal categories module**, directly linked to reservations  
+  - 🌐 **Full REST API** with Django REST Framework  
+  - 🔍 **Filtering, search, and ordering**  
+  - 🔑 **Token-based authentication** to secure endpoints  
+  - 🧪 **Automated tests** with Pytest and Postman Collection  
+  - ✅ **Test coverage: 98%**  
+
+---
+
+## 🕒 Linha do Tempo / Timeline
+
+```text
+📌 Projeto 1 – Contact Page
+   • Página de contato simples
+   • Django + SQLite + Bootstrap
+   • Testes manuais
+
+⬇️ Evolução
+
+📌 Projeto 2 – Contact + Reservas + API
+   • Sistema de reservas
+   • Categorias de animais
+   • API REST com Django REST Framework
+   • Testes via Postman
+
+⬇️ Evolução
+
+📌 Projeto 3 – Sistema Completo
+   • Reservas + Categorias + Contatos
+   • API REST robusta (CRUD + filtros + busca + ordenação)
+   • Autenticação via Token
+   • Testes automatizados (Pytest + Coverage)
+   • ✅ Cobertura de 98%
+```
+## 🔄 Comparativo de Evolução / Evolution Comparison
+
+| Aspecto / Aspect        | Projeto Anterior – *Contact Page* (PT) <br> Previous Project – *Contact Page* (EN) | Projeto Atual – *Contact + Reservas + API* (PT) <br> Current Project – *Contact + Reservations + API* (EN) |
+|--------------------------|----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| **Objetivo / Goal**      | Página de contato simples <br> Simple contact page | Sistema completo com contatos, reservas e categorias <br> Complete system with contacts, reservations, and categories |
+| **Funcionalidades / Features** | Formulário de contato <br> Contact form | CRUD completo via API + Reservas + Categorias <br> Full CRUD via API + Reservations + Categories |
+| **Tecnologias / Technologies** | Django, SQLite, Bootstrap | Django, DRF, django-filter, Pytest, Coverage |
+| **Interação / Interaction** | HTML + Admin | HTML + Admin + API REST |
+| **Testes / Tests**       | Manuais <br> Manual | Postman + Pytest (98% cobertura) <br> Postman + Pytest (98% coverage) |
+| **Autenticação / Authentication** | Não havia <br> None | Token-based |
+
+---
+
