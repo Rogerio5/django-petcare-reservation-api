@@ -4,7 +4,6 @@
 ### 📬 Contatos + 📅 Reservas + 🐾 Categorias + 🌐 API REST + 🧪 Testes Automatizados
 
 ![Capa do Projeto](reserva.png)
-![Capa do Projeto](reserva1.png)
 
 ---
 
@@ -253,6 +252,8 @@ This project was built using the following technologies and tools:
    htmlcov/index.html
    
    ✅ Cobertura atual: 98%
+   
+![Capa do Projeto](reserva1.png)
 
 ---
 
