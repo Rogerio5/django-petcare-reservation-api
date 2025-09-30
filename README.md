@@ -18,6 +18,30 @@
 
 ---
 
+## 📑 Índice / Table of Contents
+
+- [📖 Descrição / Description](#-descrição--description)
+- [📌 Status do Projeto / Project Status](#-status-do-projeto--project-status)
+- [⚙️ Funcionalidades / Features](#️-funcionalidades--features)
+- [🚀 Execução / Execution](#-execução--execution)
+- [🌐 Acesso / Access](#-acesso--access)
+- [🧰 Tecnologias / Technologies](#-tecnologias--technologies)
+- [🧪 Testes](#-testes)
+  - [🧪 Testes da API / API Tests](#-testes-da-api--api-tests)
+  - [🧪 Testes com Postman / Postman Tests](#-testes-com-postman--postman-tests)
+- [⚙️ Configuração do Ambiente / Environment Setup](#️-configuração-do-ambiente--environment-setup)
+- [▶️ Endpoints disponíveis / Available Endpoints](#️-endpoints-disponíveis--available-endpoints)
+- [🔎 Exemplos de uso / Usage Examples](#-exemplos-de-uso--usage-examples)
+- [🔑 Obtendo o Token / Getting the Token](#-obtendo-o-token--getting-the-token)
+- [📌 Evolução / Evolution](#-evolução)
+- [🕒 Linha do Tempo / Timeline](#-linha-do-tempo--timeline)
+- [🔄 Comparativo de Evolução / Evolution Comparison](#-comparativo-de-evolução--evolution-comparison)
+- [👨‍💻 Desenvolvedor / Developer](#-desenvolvedor--developer)
+- [📜 Licença / License](#-licença--license)
+- [🏁 Conclusão / Conclusion](#-conclusão--conclusion)
+
+---
+
 ## 📖 Descrição / Description
 
 **PT:**  
