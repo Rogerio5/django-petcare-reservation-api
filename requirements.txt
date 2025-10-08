@@ -8,6 +8,7 @@ Pillow==11.3.0
 asgiref==3.10.0
 sqlparse==0.5.3
 tzdata==2025.2
+python-decouple==3.10
 
 # Produção (Render/Heroku style)
 gunicorn==21.2.0
