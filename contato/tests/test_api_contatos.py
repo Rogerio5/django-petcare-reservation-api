@@ -3,6 +3,7 @@ from rest_framework.test import APIClient
 from django.contrib.auth.models import User
 from contato.models import Mensagem
 
+
 @pytest.fixture
 def api_client():
     """Cria um usuário e retorna um client autenticado"""
@@ -10,6 +11,7 @@ def api_client():
     client = APIClient()
     client.force_authenticate(user=user)
     return client
+
 
 @pytest.mark.django_db
 def test_listar_contatos(api_client):
@@ -21,6 +23,7 @@ def test_listar_contatos(api_client):
     assert data["count"] == 1
     assert data["results"][0]["nome"] == "Rogerio"
     assert data["results"][0]["email"] == "teste@teste.com"
+
 
 @pytest.mark.django_db
 def test_criar_contato(api_client):

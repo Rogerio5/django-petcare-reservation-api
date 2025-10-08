@@ -2,44 +2,84 @@ import pytest
 from datetime import date
 from rest_framework.test import APIClient
 from django.contrib.auth.models import User
-from contato.models import Reserva, Categoria
+from contato.models import Categoria, Servico, Reserva
 
 
 @pytest.fixture
 def api_client():
-    """Cria um usuário autenticado para acessar a API"""
     user = User.objects.create_user(username="teste", password="123")
     client = APIClient()
     client.force_authenticate(user=user)
     return client
 
 
+@pytest.fixture
+def categoria():
+    return Categoria.objects.create(nome="Banho")
+
+
+@pytest.fixture
+def servico(categoria):
+    return Servico.objects.create(nome="Banho e Tosa", categoria=categoria)
+
+
+@pytest.fixture
+def reserva(categoria, servico):
+    return Reserva.objects.create(
+        nome_pet="Rex",
+        telefone="+551199999999",
+        data=date.today(),
+        categoria=categoria,
+        servico=servico,
+        observacoes="Reserva de teste"
+    )
+
+
 @pytest.mark.django_db
-def test_limite_maximo_reservas_por_dia_api(api_client):
-    """Não deve permitir criar mais de 4 reservas no mesmo dia via API"""
-    categoria = Categoria.objects.create(nome="Banho")
-    data_reserva = date.today()
+def test_criar_categoria(api_client):
+    payload = {"nome": "Tosa"}
+    response = api_client.post("/api/categorias/", payload, format="json")
+    assert response.status_code == 201
+    assert Categoria.objects.count() == 1
 
-    # Cria 4 reservas válidas
-    for i in range(4):
-        Reserva.objects.create(
-            nome_pet=f"Pet {i}",
-            telefone=f"+55119999999{i}",
-            data=data_reserva,
-            categoria=categoria
-        )
 
-    # Tenta criar a 5ª reserva via API
-    payload = {
-        "nome_pet": "Pet Extra",
-        "telefone": "+551199999995",
-        "data": str(data_reserva),
-        "categoria": categoria.id,
-        "observacoes": "Teste de limite via API"
-    }
-    response = api_client.post("/api/reservas/", payload, format="json")
+@pytest.mark.django_db
+def test_listar_categorias(api_client, categoria):
+    response = api_client.get("/api/categorias/")
+    assert response.status_code == 200
+    assert response.data["count"] >= 1
+    assert response.data["results"][0]["nome"] == "Banho"
 
-    # Deve falhar com erro 400 (Bad Request)
-    assert response.status_code == 400
-    assert "non_field_errors" in response.data
-    assert response.data["non_field_errors"][0] == "Não é possível agendar mais de 4 reservas para este dia."
+
+@pytest.mark.django_db
+def test_detalhe_categoria(api_client, categoria):
+    response = api_client.get(f"/api/categorias/{categoria.id}/")
+    assert response.status_code == 200
+    assert response.data["id"] == categoria.id
+
+
+@pytest.mark.django_db
+def test_atualizar_categoria(api_client, categoria):
+    payload = {"nome": "Banho Atualizado"}
+    response = api_client.put(f"/api/categorias/{categoria.id}/", payload, format="json")
+    assert response.status_code == 200
+    categoria.refresh_from_db()
+    assert categoria.nome == "Banho Atualizado"
+
+
+@pytest.mark.django_db
+def test_remover_categoria(api_client, categoria):
+    response = api_client.delete(f"/api/categorias/{categoria.id}/")
+    assert response.status_code == 204
+    assert not Categoria.objects.filter(id=categoria.id).exists()
+
+
+@pytest.mark.django_db
+def test_listar_reservas_de_categoria(api_client, categoria, reserva):
+    response = api_client.get(f"/api/categorias/{categoria.id}/reservas/")
+    assert response.status_code == 200
+    # se endpoint for paginado:
+    if "results" in response.data:
+        assert response.data["results"][0]["nome_pet"] == "Rex"
+    else:
+        assert response.data[0]["nome_pet"] == "Rex"

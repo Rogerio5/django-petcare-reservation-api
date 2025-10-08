@@ -3,9 +3,10 @@ from datetime import date
 from contato.models import Reserva, Categoria
 from contato.forms import ReservaForm
 
+
 @pytest.mark.django_db
 def test_limite_maximo_reservas_por_dia():
-    """Não deve permitir mais de 4 reservas no mesmo dia"""
+    """Não deve permitir mais de 4 reservas no mesmo dia (via formulário)"""
     categoria = Categoria.objects.create(nome="Banho")
     data_reserva = date.today()
 
